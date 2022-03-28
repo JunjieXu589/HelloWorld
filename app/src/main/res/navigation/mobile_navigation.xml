@@ -22,4 +22,11 @@
             android:name="com.example.helloworld.ui.notifications.NotificationsFragment"
             android:label="@string/title_notifications"
             tools:layout="@layout/fragment_notifications"/>
+
+    <fragment
+            android:id="@id/navigation_parkHistory"
+            android:name="com.example.helloworld.ui.parkhistory.ParkHistoryFragment"
+            android:label="ParkHistory"
+            tools:layout="@layout/park_history_fragment"
+    />
 </navigation>

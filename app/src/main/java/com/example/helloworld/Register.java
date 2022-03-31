@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.example.helloworld.entity.User;
+import com.example.helloworld.entity.Customer;
 
 public class Register extends AppCompatActivity {
 
@@ -26,13 +26,17 @@ public class Register extends AppCompatActivity {
                 String inputUsername = username.getText().toString();
                 String inputPassword = password.getText().toString();
                 String inputAffirm = passwordAffirm.getText().toString();
-                User user = new User();
+                Customer user = new Customer();
                 if (inputAffirm.equals(inputPassword)) {
                     //密码一致，储存账号
                     user.setUserID(inputUsername);
                     user.setPwd(inputPassword);
+                    user.setCar("Unknown");
+                    user.setPayment("Unknown");
+                    user.setBalance(0);
+                    user.setTelephone("Unknown");
+                    user.save();//传回账号密码和初始数据到 数据库表
 
-                    //need 传回账号
                     Intent intent = new Intent();
                     //intent.putExtra("userID", inputUsername);
                     Toast.makeText(Register.this,"Registration successful", Toast.LENGTH_SHORT).show();

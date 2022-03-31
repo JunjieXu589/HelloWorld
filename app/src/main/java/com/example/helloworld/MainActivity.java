@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import org.litepal.tablemanager.Connector;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
                 String inputAccount = account.getText().toString();
                 String inputPwd = password.getText().toString();
+
+                Connector.getDatabase();//使用LitePal获取数据库？
 
 
                 if(inputAccount.trim().equals("")){//判断用户是否输入了账户和密码

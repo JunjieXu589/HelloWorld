@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
-public class DatabaseOPenHelper extends SQLiteOpenHelper {
+public class DatabaseOPenHelper extends SQLiteOpenHelper {//未使用LitePal写的，已经弃用
 
     public static final String CREATE_USER ="create table user ("
             + "user_id text primary key, "

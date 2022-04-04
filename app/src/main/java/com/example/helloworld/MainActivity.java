@@ -8,7 +8,11 @@ import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.example.helloworld.entity.Customer;
+import org.litepal.LitePal;
 import org.litepal.tablemanager.Connector;
+
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -59,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 String inputAccount = account.getText().toString();
                 String inputPwd = password.getText().toString();
 
-                Connector.getDatabase();//使用LitePal获取数据库？
-
 
                 if(inputAccount.trim().equals("")){//判断用户是否输入了账户和密码
                     Toast.makeText(MainActivity.this, "Account Please！", Toast.LENGTH_SHORT).show();
@@ -70,9 +72,13 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Password Please！", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                //这里缺密码是否正确的检查
-                Boolean isPwdRight = true;
+                //
+                String[] args = new String[2];//Pass the arrays into identify() to determine whether the ID and password match
+                args[0] = inputAccount ;
+                args[1] = inputPwd;
 
+                Boolean isPwdRight = identify(args);
+                //
 
                 if(isPwdRight){//如果用户密码正确
                     editor = pref.edit();
@@ -94,4 +100,26 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    protected boolean identify(String[] args){
+        String inputUserID = args[0];//ID and password entered by user
+        String inputPsw = args[1];
+        String password = "0";
+
+        List<Customer> allCustomer = LitePal.findAll(Customer.class);
+        for(Customer customer: allCustomer){//遍历表中所有customer
+            if(inputUserID.equals(customer.getUserID())){
+                password = customer.getPwd();
+                break;
+            }
+        }
+
+        if(inputPsw.equals(password)){
+            return true;
+        }else{//Toast提示在activity里
+            return false;
+        }
+    }
+
+
 }

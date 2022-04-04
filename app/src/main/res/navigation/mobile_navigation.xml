@@ -18,15 +18,15 @@
             tools:layout="@layout/fragment_dashboard"/>
 
     <fragment
-            android:id="@+id/navigation_notifications"
-            android:name="com.example.helloworld.ui.notifications.NotificationsFragment"
-            android:label="@string/title_notifications"
-            tools:layout="@layout/fragment_notifications"/>
+            android:id="@+id/navigation_userCenter"
+            android:name="com.example.helloworld.ui.usercenter.UserCenter"
+            android:label="User Center"
+            tools:layout="@layout/user_center_fragment"/>
 
     <fragment
             android:id="@id/navigation_parkHistory"
             android:name="com.example.helloworld.ui.parkhistory.ParkHistoryFragment"
-            android:label="ParkHistory"
+            android:label="Park History"
             tools:layout="@layout/park_history_fragment"
     />
 </navigation>

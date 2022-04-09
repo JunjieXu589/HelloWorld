@@ -4,10 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -37,6 +34,13 @@ public class DashboardFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1,data);
         ListView listView = binding.listView;
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {//给listview里的每一个item设置了点击事件
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(getActivity(),"成功",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //        final TextView textView = binding.textDashboard;//获取layout里的对应组件
 //        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {

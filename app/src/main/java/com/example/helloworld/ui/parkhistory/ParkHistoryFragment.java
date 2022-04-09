@@ -12,13 +12,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.example.helloworld.R;
+import com.example.helloworld.adapter.RecordItemAdapter;
 import com.example.helloworld.databinding.ParkHistoryFragmentBinding;
+import com.example.helloworld.entity.RecordItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ParkHistoryFragment extends Fragment {
 
     private ParkHistoryViewModel mViewModel;
     private ParkHistoryFragmentBinding binding;
-    private String[] data = {"aaa","bbb","ccc","ddd","eee","fff","ggg","hhh","iii","kkk","jjj"};
+    //private String[] data = {"aaa","bbb","ccc","ddd","eee","fff","ggg","hhh","iii","kkk","jjj"};//之前测试用的
+    private List<RecordItem> recordList= new ArrayList<>();
 
     public static ParkHistoryFragment newInstance() {
         return new ParkHistoryFragment();
@@ -30,13 +36,40 @@ public class ParkHistoryFragment extends Fragment {
         binding = ParkHistoryFragmentBinding.inflate(inflater,container,false);
         View root = binding.getRoot();//函数最后，返回根视图
 
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1,data);
+        initRecord();
+        RecordItemAdapter adapter = new RecordItemAdapter(getActivity(), R.layout.record_item,recordList);
         ListView listView = binding.listView;
         listView.setAdapter(adapter);
 
+
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1,data);
+//        ListView listView = binding.listView;
+//        listView.setAdapter(adapter);
+
         return root;
     }
+
+    private void initRecord(){
+        for(int i=0; i<2; i++){
+            RecordItem aaa = new RecordItem("BUPT School Park","2022-01-23 12:00");
+            recordList.add(aaa);
+            RecordItem bbb = new RecordItem("BUPT School Park","2022-01-25 12:00");
+            recordList.add(bbb);
+            RecordItem ccc = new RecordItem("Beijing International Park","2022-01-25 16:00");
+            recordList.add(ccc);
+            RecordItem ddd = new RecordItem("Beijing International Park","2022-01-25 16:00");
+            recordList.add(ddd);
+            RecordItem eee = new RecordItem("QMUL School park","2022-02-04 08:00");
+            recordList.add(eee);
+            RecordItem fff = new RecordItem("QMUL School park","2022-02-07 09:00");
+            recordList.add(fff);
+        }
+
+    }
+
+
+
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

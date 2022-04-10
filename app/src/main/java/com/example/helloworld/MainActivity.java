@@ -9,6 +9,7 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.helloworld.entity.Customer;
+import com.example.helloworld.entity.Session;
 import org.litepal.LitePal;
 import org.litepal.tablemanager.Connector;
 
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             rememberPwd.setChecked(true);
         }
 
-        login.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {//login按钮实现的功能
             @Override
             public void onClick(View view) {
 
@@ -72,17 +73,18 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Password Please！", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
                 //
                 String[] args = new String[2];//Pass the arrays into identify() to determine whether the ID and password match
                 args[0] = inputAccount ;
                 args[1] = inputPwd;
 
                 Boolean isPwdRight = identify(args);
-                //
+                //确认用户输入的密码是否和数据库里的匹配
 
                 if(isPwdRight){//如果用户密码正确
                     editor = pref.edit();
-                    if(rememberPwd.isChecked()){//用户选择记住密码
+                    if(rememberPwd.isChecked()){//用户选择记住密码，则存入SharedPerference文件中
                         editor.putBoolean("remember_password",true);
                         editor.putString("account", inputAccount);
                         editor.putString("password", inputPwd);
@@ -90,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
                         editor.clear();
                     }
                     editor.apply();
+
+                    Session session = new Session();//建立session，方便在不同页面之间传值
+                    session.setUserID(inputAccount);
+
                     Intent intent = new Intent(MainActivity.this, HomePage.class);
                     startActivityForResult(intent,1);
                 }else{//密码错误就弹出提示

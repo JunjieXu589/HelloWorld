@@ -7,4 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="ivory">#FFFFF0</color> <!--象牙色-->
+    <color name="cornsilk">#FFF8DC</color><!--米绸色-->
 </resources>

@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             rememberPwd.setChecked(true);
         }
 
-        login.setOnClickListener(new View.OnClickListener() {//login按钮实现的功能
+        login.setOnClickListener(new View.OnClickListener() {    //login按钮实现的功能
             @Override
             public void onClick(View view) {
 

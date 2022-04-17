@@ -6,12 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.helloworld.ActivityCollectUtil;
 import com.example.helloworld.MainActivity;
+import com.example.helloworld.ModifyInfo;
 import com.example.helloworld.Register;
 import com.example.helloworld.databinding.UserCenterFragmentBinding;
 import com.example.helloworld.entity.Session;
@@ -34,6 +37,15 @@ public class UserCenter extends Fragment {
         binding = UserCenterFragmentBinding.inflate(inflater,container,false);
         View root = binding.getRoot();
 
+        TextView account = binding.userCenterAccount;
+        account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), ModifyInfo.class);
+                startActivity(intent);
+            }
+        });
 
 
 

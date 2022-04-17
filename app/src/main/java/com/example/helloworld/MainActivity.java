@@ -111,11 +111,19 @@ public class MainActivity extends AppCompatActivity {
         String inputUserID = args[0];//ID and password entered by user
         String inputPsw = args[1];
         String password = "0";
+        Session session = new Session();
+
 
         List<Customer> allCustomer = LitePal.findAll(Customer.class);
         for(Customer customer: allCustomer){//遍历表中所有customer
             if(inputUserID.equals(customer.getUserID())){
                 password = customer.getPwd();
+                session.setBalance(customer.getBalance());
+                session.setPwd(customer.getPwd());
+                session.setTel(customer.getTelephone());
+                session.setCar(customer.getCar());
+                session.setPayment(customer.getPayment());
+                //直接建立了session，尽管从逻辑上说它应该在确定密码正确之后
                 break;
             }
         }

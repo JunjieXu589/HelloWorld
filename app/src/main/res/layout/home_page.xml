@@ -4,8 +4,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="?attr/actionBarSize">
+        android:layout_height="match_parent">
+<!--        android:paddingTop="?attr/actionBarSize"// 这个padding导致了页面的空白-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_view"
@@ -23,7 +23,7 @@
             android:id="@+id/nav_host_fragment_home_page"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             app:defaultNavHost="true"
             app:layout_constraintBottom_toTopOf="@id/nav_view"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -32,4 +32,5 @@
             app:navGraph="@navigation/mobile_navigation"
     />
 
+    <!-- 26行的layout_height = 0dp使得导航栏不再遮挡页面-->
 </androidx.constraintlayout.widget.ConstraintLayout>

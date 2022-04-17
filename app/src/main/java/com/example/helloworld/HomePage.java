@@ -12,10 +12,13 @@ import com.example.helloworld.databinding.HomePageBinding;
 public class HomePage extends AppCompatActivity {
 
     private HomePageBinding binding;
+    private static ActivityCollectUtil activityCollectUtil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        activityCollectUtil.addActivity(this);//这个写法完全不知道对不对！！！
+        //用于最后登出时destory activity
 
         binding = HomePageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

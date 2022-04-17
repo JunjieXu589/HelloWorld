@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                     session.setUserID(inputAccount);
 
                     Intent intent = new Intent(MainActivity.this, HomePage.class);
-                    startActivityForResult(intent,1);
+                    startActivityForResult(intent,1);//后面这个int数用于返回数据，可以自定义所有大于0的整数
                 }else{//密码错误就弹出提示
                     Toast.makeText(MainActivity.this, "Account or Password is incorrect", Toast.LENGTH_SHORT).show();
                 }

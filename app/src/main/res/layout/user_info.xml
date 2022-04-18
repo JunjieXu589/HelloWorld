@@ -9,7 +9,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp" android:layout_centerInParent="true">
+            android:layout_marginRight="40dp"
+            android:layout_centerInParent="true">
 
         <LinearLayout android:layout_width="212dp"
                       android:layout_height="wrap_content"
@@ -59,7 +60,65 @@
                 android:id="@+id/user_info_confirm"
                 android:textSize="18sp"
                 android:text="Confirm"
-                 android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal">
+        </Button>
+
+        <LinearLayout android:layout_width="200dp"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:layout_centerInParent="true"
+                      android:layout_marginTop="40dp"
+                      android:layout_marginLeft="20dp"
+                      android:layout_marginRight="20dp"
+                      android:layout_marginBottom="40dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="New Password">
+            </TextView>
+
+            <EditText android:layout_width="132dp"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/user_info_changePwd1"
+                      android:textSize="18sp"
+                      android:inputType="textPassword">
+
+            </EditText>
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="200dp"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:layout_centerInParent="true"
+                      android:layout_marginTop="10dp"
+                      android:layout_marginLeft="20dp"
+                      android:layout_marginRight="20dp"
+                      android:layout_marginBottom="10dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Password Confirm">
+            </TextView>
+
+            <EditText android:layout_width="132dp"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/user_info_changePwd2"
+                      android:textSize="18sp"
+                      android:inputType="textPassword">
+
+            </EditText>
+
+        </LinearLayout>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:id="@+id/user_pwd_confirm"
+                android:text="Confirm"
+                android:layout_gravity="center_horizontal">
+
         </Button>
 
 

@@ -12,10 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import com.example.helloworld.ActivityCollectUtil;
-import com.example.helloworld.MainActivity;
-import com.example.helloworld.ModifyInfo;
-import com.example.helloworld.Register;
+import com.example.helloworld.*;
 import com.example.helloworld.databinding.UserCenterFragmentBinding;
 import com.example.helloworld.entity.Session;
 
@@ -24,7 +21,7 @@ public class UserCenter extends Fragment {
 
     private UserCenterViewModel mViewModel;
     private UserCenterFragmentBinding binding;
-    private static Session session;
+    static Session session;
     private  ActivityCollectUtil activityCollectUtil;
 
     public static UserCenter newInstance() {
@@ -38,7 +35,10 @@ public class UserCenter extends Fragment {
         View root = binding.getRoot();
 
         TextView account = binding.userCenterAccount;
-        account.setOnClickListener(new View.OnClickListener() {
+
+        session =new Session();
+        account.setText(session.getUserID());//在此之前千万别忘记初始化session！！！
+        account.setOnClickListener(new View.OnClickListener() {//给用户名现实的位置设置监听器
             @Override
             public void onClick(View view) {
 
@@ -48,6 +48,15 @@ public class UserCenter extends Fragment {
         });
 
 
+        TextView wallet = binding.wallet;
+        wallet.setOnClickListener(new View.OnClickListener() {//给Wallet设置监听器，跳转到balance.xml
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), Wallet .class);
+                startActivityForResult(intent,3);
+            }
+        });
 
 
 
@@ -59,7 +68,7 @@ public class UserCenter extends Fragment {
                 activityCollectUtil.finishAllActivity();//结束所有栈里的activity
 
                 Intent intent = new Intent(getActivity(), MainActivity.class);//跳转到登录界面
-                startActivityForResult(intent,1);
+                startActivityForResult(intent,4);
             }
         });
 

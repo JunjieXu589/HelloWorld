@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:id="@+id/rl_top"
+            android:background="@color/blue"
+    >
+        <ImageView
+                android:id="@+id/back"
+                android:layout_marginTop="27dp"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:paddingLeft="15dp"
+                 />
+        <TextView
+                android:id="@+id/wallet_title"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="Wallet"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+        <TextView
+                android:id="@+id/wallet_charge_record"
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:paddingTop="20dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:text="Charge Records"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        <TextView
+                android:id="@+id/wallet_title_balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wallet_title"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:text="Balance:"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        <TextView
+                android:id="@+id/wallet_balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wallet_title_balance"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        <TextView
+                android:id="@+id/wallet_tittle_payMethod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wallet_balance"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:text="Payment Method:"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+        <TextView
+                android:id="@+id/rddh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wallet_tittle_payMethod"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:text="R点兑换"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:paddingBottom="20dp"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/ll"
+            android:layout_below="@id/rl_top">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="支付金额($):"/>
+        <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:id="@+id/zfje"
+                android:text="10"/>
+    </LinearLayout>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pay"
+            android:layout_below="@id/ll"
+            android:background="@color/tomato"
+            android:textColor="@color/black"
+            android:text="Confirm Charge" android:layout_marginTop="20dp" android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" android:layout_marginBottom="20dp"/>
+
+
+</RelativeLayout>

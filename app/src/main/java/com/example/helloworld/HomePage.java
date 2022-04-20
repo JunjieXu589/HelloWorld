@@ -17,6 +17,7 @@ public class HomePage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        activityCollectUtil = new ActivityCollectUtil();
         activityCollectUtil.addActivity(this);//this关键字用于指向调用它的对象，即本activity
         //用于最后登出时finishAllActivity
 

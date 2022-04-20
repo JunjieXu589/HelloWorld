@@ -15,6 +15,7 @@ public class Wallet extends AppCompatActivity {
     private TextView balance;
     private EditText chargeMoney;
     private Session session;
+    private ActivityCollectUtil activityCollectUtil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,10 @@ public class Wallet extends AppCompatActivity {
         binding = BalanceBinding.inflate(getLayoutInflater());
 //        View root = binding.getRoot();
 //        setContentView(root);//设置显示的是那个layout文件
+
+        activityCollectUtil = new ActivityCollectUtil();
+        activityCollectUtil.addActivity(this);//汇集栈中所有的activity，便于logout时全部destroy
+
         session = new Session();
 
         balance = binding.walletBalance;

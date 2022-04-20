@@ -53,11 +53,21 @@ public class UserCenter extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getActivity(), Wallet .class);
-                startActivityForResult(intent,3);
+                Intent intent = new Intent(getActivity(), Wallet.class);
+                startActivityForResult(intent,2);
             }
         });
 
+
+        TextView privacyandPolicy = binding.privacy;
+        privacyandPolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), Privacy.class);
+                startActivityForResult(intent,3);
+            }
+        });
 
 
         //Logout 按钮

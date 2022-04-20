@@ -20,6 +20,7 @@ public class ModifyInfo extends AppCompatActivity {
     private EditText passwordA;
     private EditText passwordB;
     private Button changePwd;
+    private ActivityCollectUtil activityCollectUtil;
 
 
     @Override
@@ -29,6 +30,9 @@ public class ModifyInfo extends AppCompatActivity {
         binding = UserInfoBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
         setContentView(root);
+
+        activityCollectUtil = new ActivityCollectUtil();
+        activityCollectUtil.addActivity(this);//汇集栈中所有的activity，便于logout时全部destroy
 
         car = binding.userInfoCar;//获取页面组件
         telephone = binding.userInfoTel;

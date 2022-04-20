@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Privacy">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Title_policy"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:text="Privacy Policy">
+    </TextView>
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Title_date"
+            android:layout_centerHorizontal="true"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Last Update: April 20, 2022"
+            android:layout_below="@id/Title_policy">
+    </TextView>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="5dp"
+            android:textSize="15dp"
+            android:layout_below="@id/Title_date"
+            android:text="  This Privacy Policy applies to the Websites and Apps (defined below) provided by TPS Parking Management,
+            LLC d/b/a The Parking Spot, its parent, subsidiaries, related companies and/or controlled affiliates
+            (“The Parking Spot,” “we” or “us”). By “Website(s),” we mean the website maintained at
+            Github, the corresponding mobile website, and any other websites or webpages operated by us that link to this Privacy Policy, and by “App(s),”
+            we mean our theParkingSpot mobile app, our TPS Shuttle mobile app, and any of our other mobile apps that link to this Privacy Policy.
+            This Privacy Policy also applies to information collected from or about you through email and other electronic submissions and communications
+            between you and the Websites and Apps. This Privacy Policy does not apply to any information that may be collected by third-party sites,
+            content or applications that may link to, or be accessible from or on, the Websites or Apps. Unless specified herein, this Privacy Policy also does not apply to information collected by us offline or through any other means, such as at our facilities or on websites or through mobile applications that do not link to this Privacy Policy. This Policy also does not apply to">
+    </TextView>
+
+</RelativeLayout>

@@ -88,37 +88,97 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="40dp">
 
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                style="@style/top_layout">
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/wallet"
                     android:text="Wallet"
-                    android:textSize="25sp">
+                    android:textSize="25sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="60">
             </TextView>
+            <!--被逼无奈使用layout_weight属性 不然这个箭头就是不靠右边-->
+            <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/right_arrow"
+                    android:layout_gravity="center_vertical|right">
+            </ImageView>
 
         </LinearLayout>
 
+         <!-- 分割线-->
+        <View android:layout_height="2dp"
+              android:layout_width="match_parent"
+              android:background="@color/black"
+        />
+
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                style="@style/top_layout">
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/blacklist"
                     android:text="Black List"
-                    android:textSize="25sp">
+                    android:textSize="25sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="60">
             </TextView>
 
+            <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/right_arrow"
+                    android:layout_gravity="center_vertical|right">
+            </ImageView>
+
         </LinearLayout>
+
+
+        <!-- 分割线-->
+        <View android:layout_height="2dp"
+              android:layout_width="match_parent"
+              android:background="@color/black"
+        />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                style="@style/top_layout">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/privacy"
+                    android:text="Privacy Policy"
+                    android:textSize="25sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="60">
+            </TextView>
+
+            <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/right_arrow"
+                    android:layout_gravity="center_vertical|right">
+            </ImageView>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

@@ -7,6 +7,9 @@
         <entry key="..\:/Java/HelloWorld/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1984375" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1984375" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1984375" />
+        <entry key="..\:/Java/HelloWorld/app/src/main/res/drawable/top_layout_selector.xml" value="0.17916666666666667" />
+        <entry key="..\:/Java/HelloWorld/app/src/main/res/drawable/top_select.xml" value="0.18020833333333333" />
+        <entry key="..\:/Java/HelloWorld/app/src/main/res/drawable/top_unselect.xml" value="0.18020833333333333" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/Ba.xml" value="0.17864583333333334" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/balance.xml" value="0.264" />
@@ -18,7 +21,7 @@
         <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/park_history_fragment.xml" value="0.18229166666666666" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/record_item.xml" value="0.264" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/register.xml" value="0.264" />
-        <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/user_center_fragment.xml" value="0.16666666666666666" />
+        <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/user_center_fragment.xml" value="0.264" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/user_info.xml" value="0.264" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/menu/bottom_nav_menu.xml" value="0.13541666666666666" />
       </map>

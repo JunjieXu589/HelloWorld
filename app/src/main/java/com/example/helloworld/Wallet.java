@@ -26,7 +26,7 @@ public class Wallet extends AppCompatActivity {
         session = new Session();
 
         balance = binding.walletBalance;
-//        String strBalance    //将float转化为String类型来表示余额
+//        String strBalance    //将float转化为String类型来表示余额 找不到适合的方法！！
 //        balance.setText(strBalance);
 
 

@@ -1,8 +1,8 @@
 package com.example.helloworld.ui.parkhistory;
 
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.content.Intent;
+import android.widget.*;
+import androidx.appcompat.app.AlertDialog;
 import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -11,7 +11,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.example.helloworld.Privacy;
 import com.example.helloworld.R;
+import com.example.helloworld.Register;
 import com.example.helloworld.adapter.RecordItemAdapter;
 import com.example.helloworld.databinding.ParkHistoryFragmentBinding;
 import com.example.helloworld.entity.RecordItem;
@@ -36,15 +38,36 @@ public class ParkHistoryFragment extends Fragment {
         binding = ParkHistoryFragmentBinding.inflate(inflater,container,false);
         View root = binding.getRoot();//函数最后，返回根视图
 
-        initRecord();
-        RecordItemAdapter adapter = new RecordItemAdapter(getActivity(), R.layout.record_item,recordList);
+        initRecord();//填入数据
+        RecordItemAdapter adapter = new RecordItemAdapter(getActivity(), R.layout.record_item, recordList);
         ListView listView = binding.listView;
         listView.setAdapter(adapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1,data);
-//        ListView listView = binding.listView;
-//        listView.setAdapter(adapter);
+//                Intent intent = new Intent(getActivity(), Register.class);//应该跳转的呀
+//                startActivityForResult(intent,3);
+
+                Toast.makeText(getActivity(),"成功了",Toast.LENGTH_SHORT).show();
+            }
+        });
+//
+//        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+//            @Override
+//            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
+//
+//                Toast.makeText(getActivity(),"changan",Toast.LENGTH_SHORT).show();
+////                AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+////                builder.setMessage("确定删除?");
+////                builder.setTitle("提示");
+//
+//                return false;
+//            }
+//        });
+
+
 
         return root;
     }

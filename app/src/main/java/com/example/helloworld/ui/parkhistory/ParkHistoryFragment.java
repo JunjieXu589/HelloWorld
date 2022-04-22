@@ -1,5 +1,6 @@
 package com.example.helloworld.ui.parkhistory;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.widget.*;
 import androidx.appcompat.app.AlertDialog;
@@ -47,25 +48,32 @@ public class ParkHistoryFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-//                Intent intent = new Intent(getActivity(), Register.class);//应该跳转的呀
-//                startActivityForResult(intent,3);
+                AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+                builder.setMessage("确定删除?");
+                builder.setTitle("Hint");
 
-                Toast.makeText(getActivity(),"成功了",Toast.LENGTH_SHORT).show();
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(getActivity(),"Delete successful",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.setNegativeButton("cancel", null);
+                builder.create().show();
+
+
             }
         });
-//
-//        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
-//
-//                Toast.makeText(getActivity(),"changan",Toast.LENGTH_SHORT).show();
-////                AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
-////                builder.setMessage("确定删除?");
-////                builder.setTitle("提示");
-//
-//                return false;
-//            }
-//        });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                Toast.makeText(getActivity(),"长按",Toast.LENGTH_SHORT).show();
+
+                return false;
+            }
+        });
 
 
 

@@ -8,7 +8,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:id="@+id/rl_top"
-            android:background="@color/blue"
+            android:background="@drawable/wallet_gradient"
     >
         <ImageView
                 android:id="@+id/back"
@@ -74,10 +74,11 @@
                 android:layout_below="@id/wallet_tittle_payMethod"
                 android:gravity="center"
                 android:paddingTop="10dp"
-                android:text="R点兑换"
+                android:text="Visa"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:paddingBottom="20dp"/>
+                android:paddingBottom="20dp"
+                />
 
 
     </RelativeLayout>

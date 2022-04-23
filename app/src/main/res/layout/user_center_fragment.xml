@@ -16,13 +16,14 @@
 
         <ImageView
                 android:id="@+id/images_head"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:scaleType="fitCenter"
+                android:src="@drawable/profile_car"
                 />
 
         <LinearLayout
@@ -36,7 +37,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="40dp"
                     android:layout_weight="0.3"
                     android:showDividers="middle"
                     android:orientation="horizontal">
@@ -46,6 +47,8 @@
                         android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:text="Hello,"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="right"
                         android:textSize="18sp"/>
 
                 <TextView
@@ -58,28 +61,6 @@
                         android:textStyle="bold"/>
             </LinearLayout>
 
-<!--            <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_weight="0.3"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                <TextView-->
-<!--                        android:id="@+id/textView9"-->
-<!--                        android:layout_width="70dp"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="学号："-->
-<!--                        android:textSize="18sp"/>-->
-
-<!--                <TextView-->
-<!--                        android:id="@+id/t_number"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_weight="0.44"-->
-<!--                        android:text="******"-->
-<!--                        android:textSize="18sp"-->
-<!--                        android:textStyle="bold"/>-->
-<!--            </LinearLayout>-->
 
         </LinearLayout>
 
@@ -117,7 +98,7 @@
         </LinearLayout>
 
          <!-- 分割线-->
-        <View android:layout_height="2dp"
+        <View android:layout_height="1dp"
               android:layout_width="match_parent"
               android:background="@color/black"
         />
@@ -149,7 +130,7 @@
 
 
         <!-- 分割线-->
-        <View android:layout_height="2dp"
+        <View android:layout_height="1dp"
               android:layout_width="match_parent"
               android:background="@color/black"
         />

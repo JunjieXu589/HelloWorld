@@ -15,6 +15,8 @@ import com.example.helloworld.databinding.FragmentDashboardBinding;
 import com.example.helloworld.entity.Customer;
 import org.litepal.LitePal;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DashboardFragment extends Fragment {
@@ -31,8 +33,12 @@ public class DashboardFragment extends Fragment {
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1,data);
-        ListView listView = binding.listView;
+        List<String> list1= Arrays.asList(data);//把string【】换为list，方便删除添加值
+        List<String> arrList = new ArrayList<String>(list1);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1,arrList);
+        ListView listView = binding.listView;//测试
+
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {//给listview里的每一个item设置了点击事件
@@ -42,6 +48,17 @@ public class DashboardFragment extends Fragment {
             }
         });
 
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                arrList.remove(i);
+                adapter.notifyDataSetChanged();//
+
+                Toast.makeText(getActivity(),"删除",Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
         //        final TextView textView = binding.textDashboard;//获取layout里的对应组件
 //        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
 //            @Override

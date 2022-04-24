@@ -54,8 +54,8 @@
                 android:gravity="center"
                 android:paddingTop="5dp"
                 android:paddingBottom="10dp"
-
-                android:textColor="@color/white"
+                android:text="12.5"
+                android:textColor="@color/red"
                 android:textSize="18sp" />
         <TextView
                 android:id="@+id/wallet_tittle_payMethod"
@@ -66,19 +66,30 @@
                 android:paddingTop="10dp"
                 android:text="Payment Method:"
                 android:textColor="@color/white"
-                android:textSize="14sp"/>
-        <TextView
-                android:id="@+id/rddh"
+                android:textSize="16sp"/>
+        <EditText
+                android:id="@+id/payment_method"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/wallet_tittle_payMethod"
                 android:gravity="center"
                 android:paddingTop="10dp"
-                android:text="Visa"
+                android:text="Visa: 6221 2002 0009 9417 421"
+                android:background="#00FFFFFF"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:paddingBottom="20dp"
-                />
+        />
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/payment_method"
+                android:src="@drawable/bank_card"
+                android:layout_below="@id/wallet_tittle_payMethod"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="-70dp">
+            <!-- 银行卡图标-->
+        </ImageView>
 
 
     </RelativeLayout>
@@ -94,10 +105,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:text="支付金额($):"/>
-        <TextView
+        <EditText
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/red"
+                android:background="#00FFFFFF"
                 android:id="@+id/zfje"
                 android:text="10"/>
     </LinearLayout>

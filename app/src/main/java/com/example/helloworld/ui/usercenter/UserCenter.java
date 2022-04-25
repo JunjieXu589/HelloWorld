@@ -58,6 +58,16 @@ public class UserCenter extends Fragment {
             }
         });
 
+        TextView blacklist = binding.blacklist;
+        blacklist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), BlackList.class);
+                startActivityForResult(intent,3);
+            }
+        });
+
 
         TextView privacyandPolicy = binding.privacy;
         privacyandPolicy.setOnClickListener(new View.OnClickListener() {

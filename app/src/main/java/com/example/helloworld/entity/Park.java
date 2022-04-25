@@ -13,6 +13,9 @@ public class Park extends LitePalSupport {
     private List<Record> recordlist;//为了建立表关系  park与record是1对多关系
     private List<Blacklist> blacklistList;//park与blacklist是一对多关系
 
+    public Park() {//默认构造函数
+    }
+
     //
     public int getId() {
         return id;
@@ -63,5 +66,10 @@ public class Park extends LitePalSupport {
     }
 
 
+    public Park(String park_name,String location, float cost){//构造函数
+        this.cost = cost;
+        this.location = location;
+        this.park_name = park_name;
+    }
 
 }

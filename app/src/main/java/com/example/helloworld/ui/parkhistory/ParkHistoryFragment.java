@@ -26,7 +26,6 @@ public class ParkHistoryFragment extends Fragment {
 
     private ParkHistoryViewModel mViewModel;
     private ParkHistoryFragmentBinding binding;
-    //private String[] data = {"aaa","bbb","ccc","ddd","eee","fff","ggg","hhh","iii","kkk","jjj"};//之前测试用的
     private List<RecordItem> recordList= new ArrayList<>();
 
     public static ParkHistoryFragment newInstance() {
@@ -69,7 +68,9 @@ public class ParkHistoryFragment extends Fragment {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                Toast.makeText(getActivity(),"长按",Toast.LENGTH_SHORT).show();
+                recordList.remove(position);
+                adapter.notifyDataSetChanged();
+                Toast.makeText(getActivity(),"长按删除",Toast.LENGTH_SHORT).show();
 
                 return false;
             }

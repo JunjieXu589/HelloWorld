@@ -1,6 +1,7 @@
 package com.example.helloworld.adapter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,7 @@ public class BlackListAdapter extends ArrayAdapter<Park> {
         }
 
         TextView parkName =(TextView) view.findViewById(R.id.blackList_parkName);//获取控件
+        parkName.setTypeface(Typeface.SANS_SERIF, Typeface.ITALIC);//设置其字体为斜体
         TextView location = (TextView) view.findViewById(R.id.blacklist_location);
         TextView cost = (TextView) view.findViewById(R.id.blacklist_cost);
         parkName.setText(oneBlackListPark.getPark_name());//赋值

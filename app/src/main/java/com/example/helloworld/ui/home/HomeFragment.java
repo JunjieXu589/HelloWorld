@@ -1,5 +1,6 @@
 package com.example.helloworld.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +11,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import com.example.helloworld.AddRecord;
 import com.example.helloworld.R;
 import com.example.helloworld.databinding.FragmentHomeBinding;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
+    private ExtendedFloatingActionButton addRecord;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -25,6 +29,16 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        addRecord = binding.homeAddRecord;
+        addRecord.setOnClickListener(new View.OnClickListener() {//给floating button设置
+            @Override
+            public void onClick(View view) {
+
+               Intent intent = new Intent(getActivity(), AddRecord.class);
+               startActivity(intent);
+            }
+        });
 
 //        final TextView textView = binding.textHome;
 //        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {

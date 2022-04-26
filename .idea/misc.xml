@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Sdk/platforms/android-32/data/res/layout/simple_expandable_list_item_1.xml" value="0.18541666666666667" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1984375" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1984375" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1984375" />
@@ -13,6 +14,7 @@
         <entry key="..\:/Java/HelloWorld/app/src/main/res/drawable/wallet_gradient.xml" value="0.19375" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/Ba.xml" value="0.17864583333333334" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/add_record.xml" value="0.264" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/balance.xml" value="0.4" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/black_list.xml" value="0.17083333333333334" />
         <entry key="..\:/Java/HelloWorld/app/src/main/res/layout/black_list_item.xml" value="0.4" />

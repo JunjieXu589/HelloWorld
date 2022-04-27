@@ -11,6 +11,9 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.HelloWorld">
         <activity
+                android:name=".AllPark"
+                android:exported="true"/>
+        <activity
                 android:name=".AddRecord"
                 android:exported="true"/>
         <activity

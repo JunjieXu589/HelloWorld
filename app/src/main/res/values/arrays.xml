@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="parkName">
+        <item>BUPT school park</item>
+        <item>QMUL school park</item>
+        <item>BUPT underground park</item>
+    </string-array>
+</resources>

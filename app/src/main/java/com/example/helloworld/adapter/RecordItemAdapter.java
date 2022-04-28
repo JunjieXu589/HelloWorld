@@ -104,7 +104,7 @@ public class RecordItemAdapter extends ArrayAdapter<RecordItem> {//extends Array
         TextView recordParkName;
         TextView recordTime;
         Button readMore;//
-        //should I add a ImageView?
+        // add a ImageView?
 
     }
 

@@ -104,19 +104,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="支付金额($):"/>
+                android:text="Recharge Amount($):"/>
         <EditText
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/red"
                 android:background="#00FFFFFF"
-                android:id="@+id/zfje"
+                android:id="@+id/charge_amount"
                 android:text="10"/>
     </LinearLayout>
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/pay"
+            android:id="@+id/confirm_charge"
             android:layout_below="@id/ll"
             android:background="@color/tomato"
             android:textColor="@color/black"

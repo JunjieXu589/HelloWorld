@@ -19,14 +19,18 @@ public class AllPark extends AppCompatActivity {
 
     private AllParkBinding binding;
     private List<Park> parklist = new ArrayList<>();//就是存储数据库所有park的数组
+    private ActivityCollectUtil activityCollectUtil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = AllParkBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
-        setContentView(root);//获取绑定类
-        //setContentView(R.layout.all_park);
+        setContentView(root);//get binding class
+
+          //there is no need to invoke this method because this activity will be destroyed after clickListener
+//        activityCollectUtil = new ActivityCollectUtil();
+//        activityCollectUtil.addActivity(this);//"this" keyword is used to point to the object that invokes it
 
         //TODO：要初始化测试数据
         initParklist();

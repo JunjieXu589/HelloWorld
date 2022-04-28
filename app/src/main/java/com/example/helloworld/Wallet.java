@@ -25,14 +25,15 @@ public class Wallet extends AppCompatActivity {
 //        View root = binding.getRoot();
 //        setContentView(root);//设置显示的是那个layout文件
 
+        //Aggregates all the activities in the stack, so that all the destroys are convenient for logout
         activityCollectUtil = new ActivityCollectUtil();
-        activityCollectUtil.addActivity(this);//汇集栈中所有的activity，便于logout时全部destroy
+        activityCollectUtil.addActivity(this);//add this activity into activityCollectUtil's list
 
         session = new Session();
 
         balance = binding.walletBalance;
-//        String strBalance    //将float转化为String类型来表示余额 找不到适合的方法！！
-//        balance.setText(strBalance);
+        String strBalance  =  String.valueOf(session.getBalance());//将float转化为String类型来表示余额
+        balance.setText(strBalance);
 
 
     }

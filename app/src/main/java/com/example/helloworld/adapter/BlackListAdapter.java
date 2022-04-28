@@ -15,7 +15,7 @@ import java.util.List;
 
 public class BlackListAdapter extends ArrayAdapter<Park> {
     private int resourceId;//子布局的Id，即子布局black_list_item.xml的ID
-    private Context context;//用于存放对应的activity
+    private Context context;//Used to store the corresponding activity
 
 
     public BlackListAdapter(Context context, int textViewResourceId, List<Park> object){
@@ -29,19 +29,19 @@ public class BlackListAdapter extends ArrayAdapter<Park> {
         Park oneBlackListPark = getItem(position);
         View view;
 
-        if(convertView == null){
+        if(convertView == null){//Used to cache layouts that have already been loaded
             view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
         }else{
             view = convertView;
         }
 
-        TextView parkName =(TextView) view.findViewById(R.id.blackList_parkName);//获取控件
-        parkName.setTypeface(Typeface.SANS_SERIF, Typeface.ITALIC);//设置其字体为斜体
+        TextView parkName =(TextView) view.findViewById(R.id.blackList_parkName);//get the component by findViewById()
+        parkName.setTypeface(Typeface.SANS_SERIF, Typeface.ITALIC);//Sets its font to italics
         TextView location = (TextView) view.findViewById(R.id.blacklist_location);
         TextView cost = (TextView) view.findViewById(R.id.blacklist_cost);
         parkName.setText(oneBlackListPark.getPark_name());//赋值
         location.setText(oneBlackListPark.getLocation());
-        cost.setText(String.valueOf(oneBlackListPark.getCost()));//转划成String才能显示
+        cost.setText(String.valueOf(oneBlackListPark.getCost()));//Convert to String to show
         return view;
     }
 }

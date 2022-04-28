@@ -18,15 +18,15 @@
             android:text="Add a new record">
     </TextView>
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--            android:id="@+id/addRecord_cardView"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:foreground="?android:attr/selectableItemBackground"-->
-<!--            android:layout_below="@id/title"-->
-<!--            android:clickable="true"-->
-<!--            app:cardCornerRadius="5dp"-->
-<!--            app:cardElevation="10dp">-->
+    <androidx.cardview.widget.CardView
+            android:id="@+id/addRecord_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_below="@id/title"
+            android:clickable="true"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp">
 
         <RelativeLayout
                 android:layout_width="match_parent"
@@ -191,7 +191,7 @@
 
         </RelativeLayout>
 
-<!--    </androidx.cardview.widget.CardView>-->
+    </androidx.cardview.widget.CardView>
 
     <Button
             android:layout_width="wrap_content"
@@ -199,6 +199,7 @@
             android:id="@+id/add_record_confirm"
             android:text="confirm"
             android:layout_marginTop="400dp"
+            android:layout_marginLeft="150dp"
             >
 
     </Button>

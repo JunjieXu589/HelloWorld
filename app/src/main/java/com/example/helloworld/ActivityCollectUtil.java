@@ -5,14 +5,14 @@ import android.app.Activity;
 import java.util.ArrayList;
 
 public class ActivityCollectUtil {
-    public static ArrayList<Activity> mActivityList = new ArrayList<Activity>();//静态是必须的
+    public static ArrayList<Activity> mActivityList = new ArrayList<Activity>();//must be static
 
     /**
-     * onCreate()时添加
+     * When a activity override onCreate(), use this method
      * @param activity
      */
     public static void addActivity(Activity activity){
-        //判断集合中是否已经添加，添加过的则不再添加
+        //Determine whether the collection has already been added, and if it has been added, it will not be added
         if (!mActivityList.contains(activity)){
             mActivityList.add(activity);
         }
@@ -27,7 +27,7 @@ public class ActivityCollectUtil {
     }
 
     /**
-     * 关闭所有Activity
+     * destroy all Activity
      */
     public static void finishAllActivity(){
         for (Activity activity : mActivityList){

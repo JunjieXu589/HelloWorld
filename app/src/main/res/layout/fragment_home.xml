@@ -26,7 +26,7 @@
                     android:layout_alignParentLeft="true"
                     android:textSize="18sp"
                     android:textColor="#000000"
-                    android:text="Park Name"
+                    android:text="Park Name: "
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -39,6 +39,7 @@
                     android:textColor="#000000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="BUPT school park"
                     android:layout_marginTop="15dp"/>
 
             <ImageView
@@ -46,8 +47,9 @@
                     android:scaleType="centerCrop"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
-                    android:layout_width="100dp"
-                    android:layout_height="75dp"/>
+                    android:layout_width="120dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/park_2"/>
 
 
             <!--接下来是时间 -->
@@ -64,7 +66,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:textColor="#000000"
-                        android:text="Time">
+                        android:text="Time: ">
                 </TextView>
 
                 <TextView
@@ -74,6 +76,7 @@
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="2022-04-27 10:26"
                 />
 
             </LinearLayout>
@@ -93,7 +96,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:textColor="#000000"
-                        android:text="Location">
+                        android:text="Location: ">
                 </TextView>
 
                 <TextView
@@ -103,6 +106,7 @@
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="No.10 Xitucheng Road, Haidian, China"
                 />
 
             </LinearLayout>
@@ -122,7 +126,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:textColor="#000000"
-                        android:text="Cost">
+                        android:text="Cost: ">
                 </TextView>
 
                 <TextView
@@ -132,6 +136,7 @@
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="0"
                 />
 
                 <TextView
@@ -139,7 +144,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:textColor="#000000"
-                        android:text="$/h">
+                        android:text=" $/h">
 
                 </TextView>
 
@@ -160,7 +165,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:textColor="#000000"
-                        android:text="Reputation">
+                        android:text="Reputation: ">
                 </TextView>
 
                 <TextView
@@ -170,6 +175,7 @@
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Great"
                 />
 
             </LinearLayout>
@@ -189,7 +195,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:textColor="#000000"
-                        android:text="Easy to Use">
+                        android:text="Easy to Use: ">
                 </TextView>
 
                 <TextView
@@ -199,6 +205,7 @@
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Yes"
                 />
 
             </LinearLayout>
@@ -224,7 +231,8 @@
                     android:lineSpacingExtra="5dp"
                     android:layout_margin="15dp"
                     android:textSize="18sp"
-                    android:layout_below="@id/detail_comment_title">
+                    android:layout_below="@id/detail_comment_title"
+                    android:text="It's a free parking lot, and although only BUPT students and teachers can use it, it's still a great parking experience. The only downside is that it has a bit less parking spaces.">
 
             </TextView>
 

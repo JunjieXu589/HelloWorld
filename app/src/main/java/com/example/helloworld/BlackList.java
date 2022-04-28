@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BlackList extends AppCompatActivity {
+public class BlackList extends AppCompatActivity {//Display all the park in Blacklist, paired with BlacklistAdapter
 
     private BlackListBinding binding;
     private List<Park> parklist = new ArrayList<>();//就是存储所有blacklist里的park的数组
@@ -54,7 +54,7 @@ public class BlackList extends AppCompatActivity {
                         Toast.makeText(BlackList.this,"Remove successful",Toast.LENGTH_SHORT).show();
                     }
                 });
-                builder.setNegativeButton("cancel", null);//negative按钮，啥也不干
+                builder.setNegativeButton("cancel", null);//negative按钮，do nothing
                 builder.create().show();
 
                 return false;

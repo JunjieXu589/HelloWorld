@@ -9,7 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.example.helloworld.databinding.HomePageBinding;
 
-public class HomePage extends AppCompatActivity {
+public class HomePage extends AppCompatActivity {//Contains three frogments:home, parkhistory, userCenter
 
     private HomePageBinding binding;
     private static ActivityCollectUtil activityCollectUtil;
@@ -19,7 +19,7 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         activityCollectUtil = new ActivityCollectUtil();
         activityCollectUtil.addActivity(this);//this关键字用于指向调用它的对象，即本activity
-        //用于最后登出时finishAllActivity
+        //用于logout时finishAllActivity
 
         binding = HomePageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

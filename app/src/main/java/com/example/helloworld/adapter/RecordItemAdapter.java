@@ -26,7 +26,7 @@ import java.util.List;
 import static androidx.core.app.ActivityCompat.startActivityForResult;
 import static androidx.core.content.ContextCompat.startActivity;
 
-public class RecordItemAdapter extends ArrayAdapter<RecordItem> {//课本117页有介绍
+public class RecordItemAdapter extends ArrayAdapter<RecordItem> {//extends ArrayAdapter
     private int resourceId;//似乎是子布局的Id，即子布局record_item.xml的ID
     private ParkHistoryFragmentBinding binding;
     private Context context;//用于存放对应的activity，即parkhistory这个fragment????
@@ -45,7 +45,7 @@ public class RecordItemAdapter extends ArrayAdapter<RecordItem> {//课本117页�
         View view;
         ViewHolder viewHolder;
 
-        if(convertView == null){//convertView 用于将之前加载好的布局进行缓存，以方便之后重用
+        if(convertView == null){//convertView:Used to cache previously loaded layouts for later reuse
             view = LayoutInflater.from(getContext()).inflate(resourceId, parent,false);
             viewHolder = new ViewHolder();
             //获取控件
@@ -57,7 +57,7 @@ public class RecordItemAdapter extends ArrayAdapter<RecordItem> {//课本117页�
             view.setTag(viewHolder);//将viewHolder存在view中
         }else {
             view = convertView;
-            viewHolder = (ViewHolder) view.getTag();//从view中重新获取viewHolder
+            viewHolder = (ViewHolder) view.getTag();//Re-fetch the viewHolder from the view
         }
 
         viewHolder.recordParkName.setText(recordItem.getParkName());//把recordItem里面的数据放到textview里
@@ -99,12 +99,12 @@ public class RecordItemAdapter extends ArrayAdapter<RecordItem> {//课本117页�
 
     }
 
-    class ViewHolder{//内部类
+    class ViewHolder{//Inner classes
         CardView cardview;
         TextView recordParkName;
         TextView recordTime;
         Button readMore;//
-        //应该加一个ImageView的
+        //should I add a ImageView?
 
     }
 

@@ -1,7 +1,8 @@
 package com.example.helloworld.entity;
 
 public class Session {//Using static variables to transfer values between different pages
-    private static Customer  customer = new Customer();//Static保证了它在整个程序运行期间只会有一个值
+    private static Customer  customer = new Customer();//Static
+    // It is guaranteed to have only one value during the entire program run
 
     public String getTel(){
         return customer.getTelephone();

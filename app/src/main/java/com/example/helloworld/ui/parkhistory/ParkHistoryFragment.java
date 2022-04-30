@@ -22,7 +22,7 @@ import com.example.helloworld.entity.RecordItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParkHistoryFragment extends Fragment {//
+public class ParkHistoryFragment extends Fragment  {//
 
     private ParkHistoryViewModel mViewModel;
     private ParkHistoryFragmentBinding binding;
@@ -90,6 +90,32 @@ public class ParkHistoryFragment extends Fragment {//
 
 
 
+
+        adapter.setOnInnerItemOnClickListener(new RecordItemAdapter.InnerItemOnclickListener() {
+            @Override
+            public void itemClick(View v) {
+                int position;//还是代表页面中的position，从0开始
+                position = (Integer) v.getTag();
+
+                AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());//弹出对话框
+                builder.setMessage("Delete?");
+                builder.setTitle("Hint");
+
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        recordList.remove(position);
+                        adapter.notifyDataSetChanged();
+                        //Toast.makeText(getActivity(), String.valueOf(position), Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+                builder.setNegativeButton("cancel", null);
+                builder.create().show();
+
+            }
+        });
+
         return root;
     }
 
@@ -110,8 +136,6 @@ public class ParkHistoryFragment extends Fragment {//
         }
 
     }
-
-
 
 
     @Override

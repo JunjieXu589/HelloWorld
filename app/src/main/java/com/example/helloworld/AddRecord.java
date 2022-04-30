@@ -25,12 +25,12 @@ public class AddRecord extends AppCompatActivity {
 
         binding = AddRecordBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
-        setContentView(root);//获取绑定类
-//        setContentView(R.layout.add_record);//作用应该和上面一致
+        setContentView(root);//get the binding class
+//        setContentView(R.layout.add_record);//The effect should be consistent with the code above
 
 //        Spinner parkNameSpinner = binding.addRecordParkName;
 //        Button more = binding.addMorePark;//获取页面组件
-//        TextView tiaozhuan = binding.addParkNameTitle;
+//        TextView tiaozhuan = binding.addParkNameTitle;//FOR DEBUG
         //CardView cardView = binding.addRecordCardView;
         Button confirm = binding.addRecordConfirm;
 

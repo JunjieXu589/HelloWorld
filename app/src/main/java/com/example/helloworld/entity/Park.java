@@ -10,10 +10,10 @@ public class Park extends LitePalSupport {
     private float cost;
     private String location;
 
-    private List<Record> recordlist;//为了建立表关系  park与record是1对多关系
+    private List<Record> recordlist;//为了建立表关系  park and record's relation is 1 to more(1..n)
     private List<Blacklist> blacklistList;//park与blacklist是一对多关系
 
-    public Park() {//默认构造函数
+    public Park() {//default constructor
     }
 
     //

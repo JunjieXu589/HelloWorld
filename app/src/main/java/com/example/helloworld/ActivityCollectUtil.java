@@ -29,7 +29,7 @@ public class ActivityCollectUtil {
     /**
      * destroy all Activity
      */
-    public static void finishAllActivity(){
+    public static void finishAllActivity(){//invoke every activity's finish() method.
         for (Activity activity : mActivityList){
             if (!activity.isFinishing()){
                 activity.finish();

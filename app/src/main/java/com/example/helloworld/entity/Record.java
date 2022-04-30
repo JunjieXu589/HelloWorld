@@ -4,7 +4,7 @@ import org.litepal.crud.LitePalSupport;
 
 public class Record extends LitePalSupport {//它与park或user均为多对1的关系
     private int id;
-    private Park park;//这里意在引用park_id
+    private Park park;//This is reflected in the database as the park_id attribute
     private Customer customer;//这里意在引用user_id
     private String time;
     private String comment;

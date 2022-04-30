@@ -8,10 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,10 +23,11 @@ import java.util.List;
 import static androidx.core.app.ActivityCompat.startActivityForResult;
 import static androidx.core.content.ContextCompat.startActivity;
 
-public class RecordItemAdapter extends ArrayAdapter<RecordItem> {//extends ArrayAdapter
+public class RecordItemAdapter extends ArrayAdapter<RecordItem> implements View.OnClickListener {//extends ArrayAdapter
     private int resourceId;//似乎是子布局的Id，即子布局record_item.xml的ID
     private ParkHistoryFragmentBinding binding;
     private Context context;//用于存放对应的activity，即parkhistory这个fragment????
+    private InnerItemOnclickListener mListener;
 
     public RecordItemAdapter(Context context, int textViewResourceId, List<RecordItem> object){
         super(context,textViewResourceId,object);
@@ -53,6 +51,7 @@ public class RecordItemAdapter extends ArrayAdapter<RecordItem> {//extends Array
             viewHolder.recordParkName =  view.findViewById(R.id.record_parkName);
             viewHolder.recordTime = view.findViewById(R.id.record_time);
             viewHolder.readMore = view.findViewById(R.id.button_more);
+            viewHolder.delete = view.findViewById(R.id.record_delete);
 
             view.setTag(viewHolder);//将viewHolder存在view中
         }else {
@@ -63,34 +62,27 @@ public class RecordItemAdapter extends ArrayAdapter<RecordItem> {//extends Array
         viewHolder.recordParkName.setText(recordItem.getParkName());//把recordItem里面的数据放到textview里
         viewHolder.recordTime.setText(recordItem.getRecordTime());//把recordItem里面的数据放到textview里
 
+        viewHolder.delete.setOnClickListener(this);//还没搞懂是为啥
+        viewHolder.delete.setTag(position);//其实就是用来传值的
+
+        //cardview设置跳转
         viewHolder.cardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {//给cardview设置监听事件
                //
-                Intent intent = new Intent(context, RecordDetail.class);//跳转同时传递position参数
-                intent.putExtra("record_position",position);//注意position是从0开始计数的
+                Intent intent = new Intent(context, RecordDetail.class);//The jump also passes the position argument
+                intent.putExtra("record_position",position);//Position is counted from 0
                 context.startActivity(intent);
             }
         });
+
+        ////readmore设置跳转
         viewHolder.readMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(context, RecordDetail.class);//跳转
-//                intent.putExtra("record_position",position);//注意position是从0开始计数的
-//                context.startActivity(intent);
-
-                AlertDialog.Builder builder=new AlertDialog.Builder(context);
-                builder.setMessage("确定删除?");
-                builder.setTitle("Hint");
-
-                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                    }
-                });
-                builder.setNegativeButton("cancel", null);
-                builder.create().show();
+                Intent intent = new Intent(context, RecordDetail.class);//跳转
+                intent.putExtra("record_position",position);//注意position是从0开始计数的
+                context.startActivity(intent);
             }
         });
 
@@ -103,10 +95,22 @@ public class RecordItemAdapter extends ArrayAdapter<RecordItem> {//extends Array
         CardView cardview;
         TextView recordParkName;
         TextView recordTime;
-        Button readMore;//
+        Button readMore;
+        ImageView delete;
         // add a ImageView?
 
     }
 
+    public interface InnerItemOnclickListener {//这个接口用于早activity里实现cardview里的点击事件
+        void itemClick(View v);
+    }
 
+    public void setOnInnerItemOnClickListener(InnerItemOnclickListener listener){//似乎是构造函数
+        this.mListener=listener;
+    }
+
+    @Override
+    public void onClick(View v) {//这个override的是OnClickListener里的method
+        mListener.itemClick(v);
+    }
 }

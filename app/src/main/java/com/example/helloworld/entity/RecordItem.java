@@ -3,7 +3,7 @@ package com.example.helloworld.entity;
 public class RecordItem {
     private String parkName;
     private String recordTime;
-    //private int image;//不知道能否用到 也许用cardview会用不到，，可能还要加reputation来判断用娜张图
+    //private int image;//不知道能否用到 也许用cardview会用不到，，可能还要加reputation来判断用哪张图
 
 
     public RecordItem(String parkName, String recordTime) {//constructor

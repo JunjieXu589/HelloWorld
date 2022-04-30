@@ -36,14 +36,12 @@
             android:lineSpacingExtra="5dp"
             android:textSize="15dp"
             android:layout_below="@id/Title_date"
-            android:text="  This Privacy Policy applies to the Websites and Apps (defined below) provided by TPS Parking Management,
-            LLC d/b/a The Parking Spot, its parent, subsidiaries, related companies and/or controlled affiliates
-            (“The Parking Spot,” “we” or “us”). By “Website(s),” we mean the website maintained at
-            Github, the corresponding mobile website, and any other websites or webpages operated by us that link to this Privacy Policy, and by “App(s),”
-            we mean our theParkingSpot mobile app, our TPS Shuttle mobile app, and any of our other mobile apps that link to this Privacy Policy.
-            This Privacy Policy also applies to information collected from or about you through email and other electronic submissions and communications
-            between you and the Websites and Apps. This Privacy Policy does not apply to any information that may be collected by third-party sites,
-            content or applications that may link to, or be accessible from or on, the Websites or Apps. Unless specified herein, this Privacy Policy also does not apply to information collected by us offline or through any other means, such as at our facilities or on websites or through mobile applications that do not link to this Privacy Policy. This Policy also does not apply to">
+            android:text="  This Privacy Policy applies to the Apps (defined below) provided by Car Parking App Developer,By “App(s),” we mean our car park mobile app, our TPS Shuttle mobile app, and any of our other mobile apps that link to this Privacy Policy.
+            This Privacy Policy also applies to information collected from or about you through email and other electronic submissions and communications between you and the Websites and Apps. This Privacy Policy does not apply to any information that may be collected by third-party sites,
+            content or applications that may link to, or be accessible from or on, the Websites or Apps. Unless specified herein, this Privacy Policy also does not apply to information collected by us offline or through any other means, such as at our facilities or on websites or through mobile applications that do not link to this Privacy Policy.
+            This Policy also does not apply to any information that may be collected by third-party sites, content or applications that may link to, or be accessible from or on, the Websites or Apps. Unless specified herein, this Privacy Policy also does not apply to information collected by us offline or through any other means, such as at our facilities or on websites or through mobile applications that do not link to this Privacy Policy.
+            This Policy also does not apply to information collected by third parties, including through any application or content (including advertising) that may link to or be accessible from this App. This Privacy Policy describes the types of information that we collect from or about users of the Websites and Apps (“you”), how and for what purposes that information may be used and disclosed, the steps we take to protect that information, and the choices that you have regarding whether and how certain information is collected, disclosed and used.
+                                                                         Please read the following carefully to understand our policies and practices regarding your information and how we will treat it. BY DOWNLOADING AND/OR USING THE APPS, YOU SIGNIFY YOUR CONSENT TO THIS PRIVACY POLICY, AND ALSO SIGNIFY YOUR ACCEPTANCE OF OUR TERMS AND CONDITIONS。 IF YOU DO NOT AGREE TO ALL OF THE TERMS OF THIS PRIVACY POLICY, YOU SHOULD NOT ACCESS, DOWNLOAD AND/OR USE THE APPS. We encourage you to review this Privacy Policy frequently, as it may change from time to time. Click here to read about how changes to this Privacy Policy will be communicated to you and made effective.">
     </TextView>
 
 </RelativeLayout>

@@ -39,6 +39,7 @@
 
 
             <LinearLayout
+                    android:id="@+id/record_time_title"
                     android:orientation="horizontal"
                     android:layout_below="@+id/record_reputation"
                     android:layout_width="match_parent"
@@ -69,17 +70,29 @@
             </LinearLayout>
 
 
+            <ImageView
+                    android:id="@+id/record_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/record_time_title"
+                    android:src="@drawable/delete">
+
+            </ImageView>
+
             <Button
                     android:id="@+id/button_more"
                     android:background="#00000000"
                     android:textColor="#7AD3E0"
                     android:text="READ MORE"
-                    android:layout_below="@+id/record_reputation"
-                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/record_time_title"
+                    android:layout_toLeftOf="@id/record_delete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginRight="0dp"/>
+                    android:layout_marginTop="-10dp"
+                    />
+
+
 
         </RelativeLayout>
 

@@ -8,7 +8,7 @@
 
     <TextView
             android:id="@+id/parkList_parkName"
-            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
             android:gravity="center_horizontal"
 
             android:textSize="20sp"

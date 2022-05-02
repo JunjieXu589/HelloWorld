@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/cornsilk"
+        android:background="@color/moreCornsilk"
         android:orientation="vertical">
 
     <LinearLayout
@@ -167,15 +167,15 @@
 
     <Button
             android:id="@+id/btn_logout"
+            app:backgroundTint="@color/nattierBlue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/login_btn_login"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
             android:layout_marginTop="100dp"
-            android:background="?attr/colorPrimary"
             android:text="Log out"
             android:textColor="@color/white"
             android:textSize="18sp"/>

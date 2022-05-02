@@ -22,4 +22,6 @@
     <color name="orangered">#FF4500</color><!--红橙色 -->
     <color name="fuchsia">#FF00FF</color><!--紫红色 -->
     <color name="magenta">#FF00FF</color><!--红紫色 -->
+    <color name="moreCornsilk">#FFEBC1</color>
+    <color name="nattierBlue">#A2B38B</color>
 </resources>

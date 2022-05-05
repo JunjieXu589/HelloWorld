@@ -11,6 +11,7 @@ import com.example.helloworld.adapter.ParkListAdapter;
 import com.example.helloworld.databinding.AllParkBinding;
 import com.example.helloworld.databinding.BlackListBinding;
 import com.example.helloworld.entity.Park;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +53,15 @@ public class AllPark extends AppCompatActivity {
         });
 
 
+        ExtendedFloatingActionButton addNewPark =binding.addPark;
+        addNewPark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AllPark.this, AddPark.class);
+                startActivityForResult(intent,1);
 
+            }
+        });
     }
 
 

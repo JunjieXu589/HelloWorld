@@ -26,7 +26,9 @@
                 android:theme="@style/Platform.MaterialComponents"
                 android:layout_gravity="center_horizontal|bottom"
                 android:layout_marginBottom="16dp"
-                app:icon="@drawable/add_symbol">
+                app:icon="@drawable/add_symbol"
+                android:text="Add a park"
+                android:textSize="14sp">
 
         </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
 

@@ -12,7 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import com.example.helloworld.databinding.AddRecordBinding;
+import com.example.helloworld.entity.Customer;
 import com.example.helloworld.entity.Park;
+import com.example.helloworld.entity.Record;
 import org.litepal.LitePal;
 
 import java.util.ArrayList;
@@ -25,6 +27,7 @@ public class AddRecord extends AppCompatActivity {
     private ArrayAdapter<String> parkNameAdapter;
     private Calendar calendar;
     private Park chosenPark;//这是那个被选中的park 即record要包含的那个park
+    private Record newRecord;
 
 
     @Override
@@ -40,9 +43,14 @@ public class AddRecord extends AppCompatActivity {
         Button confirm = binding.addRecordConfirm;
         EditText date = binding.addDate;
         EditText time = binding.addTime;
+        EditText useEasy = binding.detailEasyUse;
+        EditText reputation =binding.detailReputation;
+        EditText comment = binding.addComment;
+
 
 
         chosenPark = new Park();//牢记初始化！这个是记录选择的是哪个park
+        newRecord = new Record();////牢记初始化！这个是要以俺家到数据库中的record
         parkNameList = new ArrayList<String>();
         initParkNameList();
 
@@ -119,11 +127,29 @@ public class AddRecord extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO:存入数据库
+                //存入数据库
+                String inputUseEasy = useEasy.getText().toString();
+                String inputReputation = reputation.getText().toString();
+                String inputTime = date.getText().toString()+" "+time.getText().toString();
+                String inputComment = comment.getText().toString();//获取String值
+                Log.e("Test", chosenPark.getLocation());//测试是否可以正确获得
+
+                Customer me =  LitePal.findFirst(Customer.class);//直接搜索了第一个
+                newRecord.setPark(chosenPark);
+                newRecord.setCustomer(me);
+                newRecord.setUse_easy(inputUseEasy);
+                newRecord.setReputation(inputReputation);
+                newRecord.setTime(inputTime);
+                newRecord.setComment(inputComment);
+                if (newRecord.save()) {
+                    Toast.makeText(AddRecord.this, "Record added successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(AddRecord.this, "Record added failed", Toast.LENGTH_SHORT).show();
+                }
+
 
                 Intent intent = new Intent(AddRecord.this, HomePage.class);
-                startActivity(intent);
-
+                startActivity(intent);//直接跳转回主页
 
             }
         });
@@ -140,9 +166,8 @@ public class AddRecord extends AppCompatActivity {
             case 1:
                 if(resultCode == RESULT_OK){
 
-                   //TODO
+                   //
                     int position = data.getIntExtra("park_position",0);
-                    Log.e("Test",String.valueOf(position));
 
                     Spinner parkSpinner = findViewById(R.id.add_record_parkName);
                     chosenPark = LitePal.find(Park.class,(position+1));

@@ -43,7 +43,12 @@
         <condition column="id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="643eeb31-e76d-4531-956b-0de189110cb1" dataset="main.park" active-filter-id="" />
+    <filter-actions connection-id="643eeb31-e76d-4531-956b-0de189110cb1" dataset="main.blacklist" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="643eeb31-e76d-4531-956b-0de189110cb1" dataset="main.park" active-filter-id="EMPTY_FILTER">
+      <filter id="fe1e1cea-8c7c-4485-bf4a-26e5b9152467" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />

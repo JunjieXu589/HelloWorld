@@ -2,9 +2,10 @@ package com.example.helloworld.entity;
 
 import org.litepal.crud.LitePalSupport;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Park extends LitePalSupport {
+public class Park extends LitePalSupport implements Serializable {//可序列化
     private int id;
     private String park_name;
     private float cost;

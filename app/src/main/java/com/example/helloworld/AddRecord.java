@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import com.example.helloworld.databinding.AddRecordBinding;
+import com.example.helloworld.entity.Park;
+import org.litepal.LitePal;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -19,15 +21,15 @@ import java.util.List;
 
 public class AddRecord extends AppCompatActivity {
     private AddRecordBinding binding;
-    private List<String> parkNameList;
+    private List<String> parkNameList;//这是spinner用的那个list
     private ArrayAdapter<String> parkNameAdapter;
     private Calendar calendar;
+    private Park chosenPark;//这是那个被选中的park 即record要包含的那个park
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = AddRecordBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
         setContentView(root);//get the binding class
@@ -40,6 +42,7 @@ public class AddRecord extends AppCompatActivity {
         EditText time = binding.addTime;
 
 
+        chosenPark = new Park();//牢记初始化！这个是记录选择的是哪个park
         parkNameList = new ArrayList<String>();
         initParkNameList();
 
@@ -118,6 +121,9 @@ public class AddRecord extends AppCompatActivity {
             public void onClick(View view) {
                 //TODO:存入数据库
 
+                Intent intent = new Intent(AddRecord.this, HomePage.class);
+                startActivity(intent);
+
 
             }
         });
@@ -137,6 +143,17 @@ public class AddRecord extends AppCompatActivity {
                    //TODO
                     int position = data.getIntExtra("park_position",0);
                     Log.e("Test",String.valueOf(position));
+
+                    Spinner parkSpinner = findViewById(R.id.add_record_parkName);
+                    chosenPark = LitePal.find(Park.class,(position+1));
+                    Toast.makeText(AddRecord.this,"You have chosen a park",Toast.LENGTH_SHORT).show();
+                    parkNameList.add(0,chosenPark.getPark_name());
+
+                    parkSpinner.setAdapter(parkNameAdapter);//重设适配器
+                    parkNameAdapter.notifyDataSetChanged();
+                    parkSpinner.setSelection(0,true);//true表示立刻刷新spinner的选择
+
+
                 }
             break;
             default:

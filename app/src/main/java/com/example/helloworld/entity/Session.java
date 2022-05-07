@@ -23,6 +23,10 @@ public class Session {//Using static variables to transfer values between differ
         return customer.getBalance();
     }
 
+    public static Customer getCustomer() {
+        return customer;
+    }
+
     public void  setTel(String tel){
         customer.setTelephone(tel);
     }
@@ -41,4 +45,9 @@ public class Session {//Using static variables to transfer values between differ
     public void setBalance(Float balance){
         customer.setBalance(balance);
     }
+
+    public void setCustomer(Customer customer){
+        Session.customer = customer;
+    }
+
 }
